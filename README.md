@@ -28,7 +28,11 @@ Piada interna.
 	>> Programas utilizados
 
 Eclipse IDE, Photoshop, Illustrator, Git & GitHub.com, Paint (agradecimento especial), Monday.com, Google apps, caderninho pessoal (agradecimento especial), etc..
-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
 Todos os direitos reservados.
 @Copyright
 
