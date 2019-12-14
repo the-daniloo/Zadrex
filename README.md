@@ -1,9 +1,9 @@
 # Zadrex
 Um xadrez feito totalmente em Java.
 
-								------ CO DE BOTAS BLOCODENOTAS ------
+						------ CO DE BOTAS BLOCODENOTAS ------
 
-	Zadrex é um projeto criado por 2 melhores amigos (AKA Carolinda e Dandan),sendo o primeiro jogo da nossa companhia, CD-ROM. Nossos objetivos são: aprender
+   Zadrex é um projeto criado por 2 melhores amigos (AKA Carolinda e Dandan),sendo o primeiro jogo da nossa companhia, CD-ROM. Nossos objetivos são: aprender
 técnicas de programação de jogos em Java, sem FrameWorks, desenvolver algo em equipe, passar mais tempo juntos, e, é claro, se divertir!
 
 	>>Por que "Zadrex"?
