@@ -7,6 +7,9 @@ import com.GUI.Window;
 import com.assets.Assets;
 import com.input.KeyboardManager;
 import com.input.MouseManager;
+import com.state.GameState;
+import com.state.MenuState;
+import com.state.State;
 
 public class Game implements Runnable {
 	
@@ -20,6 +23,9 @@ public class Game implements Runnable {
 	
 	private KeyboardManager keyboardManager;
 	private MouseManager mouseManager;
+	
+	private GameState gameState;
+	private MenuState menuState;
 	
 	@Override
 	public void run() {
@@ -69,6 +75,11 @@ public class Game implements Runnable {
 		window.getCanvas().addMouseMotionListener(mouseManager);
 		
 		Assets.init();
+		
+		gameState = new GameState();
+		menuState = new MenuState();
+		
+		State.setCurrentStateTo(menuState);
 	}
 	
 	private void render() {
@@ -80,7 +91,7 @@ public class Game implements Runnable {
 		g = bs.getDrawGraphics();
 		g.clearRect(0, 0, window.getWidth(), window.getHeight());
 		
-		g.drawImage(Assets.b, 50, 50, 128, 128, null);
+		State.getCurrentState().render(g);
 		
 		g.dispose();
 		bs.show();
