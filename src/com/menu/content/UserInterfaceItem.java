@@ -13,8 +13,6 @@ public abstract class UserInterfaceItem
 	
 	protected BufferedImage texture;
 	
-	protected boolean hovered = false;
-	
 	public UserInterfaceItem(int x, int y, int width, int height)
 	{
 		this.x = x;
@@ -64,12 +62,5 @@ public abstract class UserInterfaceItem
 
 	public void setTexture(BufferedImage texture) 
 	{this.texture = texture;}
-
-	
-	public boolean isHovered() 
-	{return hovered;}
-
-	public void setHovered(boolean hovered) 
-	{this.hovered = hovered;}
 	
 }

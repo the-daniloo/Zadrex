@@ -1,0 +1,13 @@
+GameButton deve ser abstract?
+
+> sim:
+- criar classe individual para cada botão (PlayButton, PauseButton...)
+(mais provável, mas juntaria muitas classes para funções muito específicas)
+
+> não:
+- criar um algo tipo interface que set a função do botão
+
+GameButton play = new GameButton();
+play.setFuncao(play); //exemplo
+
+(nao sei como fazer)
