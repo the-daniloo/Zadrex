@@ -21,6 +21,8 @@ public class Game implements Runnable {
 	private KeyboardManager keyboardManager;
 	private MouseManager mouseManager;
 	
+	private Handler handler;
+	
 	@Override
 	public void run() {
 		init();
@@ -68,6 +70,8 @@ public class Game implements Runnable {
 		window.getCanvas().addMouseListener(mouseManager);
 		window.getCanvas().addMouseMotionListener(mouseManager);
 		
+		handler = new Handler(this);
+		
 		Assets.init();
 	}
 	
@@ -109,6 +113,30 @@ public class Game implements Runnable {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public Window getWindow() {
+		return window;
+	}
+
+	public void setWindow(Window window) {
+		this.window = window;
+	}
+
+	public KeyboardManager getKeyboardManager() {
+		return keyboardManager;
+	}
+
+	public void setKeyboardManager(KeyboardManager keyboardManager) {
+		this.keyboardManager = keyboardManager;
+	}
+
+	public MouseManager getMouseManager() {
+		return mouseManager;
+	}
+
+	public void setMouseManager(MouseManager mouseManager) {
+		this.mouseManager = mouseManager;
 	}
 	
 }
