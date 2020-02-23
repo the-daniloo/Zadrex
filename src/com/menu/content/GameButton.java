@@ -3,7 +3,7 @@ package com.menu.content;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
-public class GameButton extends UserInterfaceItem {
+public class GameButton extends UserInterfaceItem implements Clickable {
 	
 	protected BufferedImage hoveredTexture;
 	protected boolean hovered = false;
@@ -12,6 +12,8 @@ public class GameButton extends UserInterfaceItem {
 		super(x, y, width, height);
 	}
 
+	//SUPER CLASS 
+	
 	@Override
 	public void tick()
 	{
@@ -27,6 +29,14 @@ public class GameButton extends UserInterfaceItem {
 			g.drawImage(hoveredTexture, x, y, width, height, null);
 		}
 	}
+	
+	//INTERFACE CLICKABLE
+	
+	@Override
+	public void onClick() {}
+
+	@Override
+	public void onHover() {}
 	
 	//GETTERS AND SETTERS
 	
