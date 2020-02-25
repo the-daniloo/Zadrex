@@ -4,7 +4,9 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-public abstract class UserInterfaceItem 
+import com.core.Handler;
+
+public abstract class UserInterfaceItem implements Clickable
 {
 	public static ArrayList<UserInterfaceItem> items = new ArrayList<>();
 	
@@ -13,13 +15,17 @@ public abstract class UserInterfaceItem
 	
 	protected BufferedImage texture;
 	
-	public UserInterfaceItem(int x, int y, int width, int height)
+	protected Handler handler;
+	
+	public UserInterfaceItem(int x, int y, int width, int height, Handler handler)
 	{
 		this.x = x;
 		this.y = y;
 		
 		this.width = width;
 		this.height = height;
+		
+		this.handler = handler;
 		
 		items.add(this);
 	}
