@@ -15,6 +15,8 @@ public class Game implements Runnable {
 	
 	private Window window;
 	
+	private State gameState, menuState;
+	
 	private Thread thread;
 	private boolean running = false;
 	
@@ -24,8 +26,7 @@ public class Game implements Runnable {
 	private KeyboardManager keyboardManager;
 	private MouseManager mouseManager;
 	
-	private GameState gameState;
-	private MenuState menuState;
+	private Handler handler;
 	
 	@Override
 	public void run() {
@@ -74,6 +75,8 @@ public class Game implements Runnable {
 		window.getCanvas().addMouseListener(mouseManager);
 		window.getCanvas().addMouseMotionListener(mouseManager);
 		
+		handler = new Handler(this);
+		
 		Assets.init();
 		
 		gameState = new GameState();
@@ -120,6 +123,30 @@ public class Game implements Runnable {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public Window getWindow() {
+		return window;
+	}
+
+	public void setWindow(Window window) {
+		this.window = window;
+	}
+
+	public KeyboardManager getKeyboardManager() {
+		return keyboardManager;
+	}
+
+	public void setKeyboardManager(KeyboardManager keyboardManager) {
+		this.keyboardManager = keyboardManager;
+	}
+
+	public MouseManager getMouseManager() {
+		return mouseManager;
+	}
+
+	public void setMouseManager(MouseManager mouseManager) {
+		this.mouseManager = mouseManager;
 	}
 	
 }
