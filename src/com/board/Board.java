@@ -13,12 +13,10 @@ public class Board {
 	public static final int HEIGHT = 512;
 	public static final int WIDTH = 512;
 	
-	private final int black = 1;
-	private final int white = 0;
-	private int squares[][];
+	private Square squares[][];
 	
 	public Board() {
-		this.squares = new int[SQUARE_WIDTH][SQUARE_HEIGHT];
+		this.squares = new Square[SQUARE_WIDTH][SQUARE_HEIGHT];
 	}
 	
 	public void tick() {
@@ -28,13 +26,7 @@ public class Board {
 	public void render(Graphics g) {
 		for(int x = 0; x < 8; x++) {
 			for(int y = 0; y < 8; y++) {
-				if(squares[x][y] == black) {
-					g.setColor(Color.black);
-					//g.fillRect();
-				} else {
-					g.setColor(Color.white);
-					//g.fillRect();
-				}
+				squares[x][y].render(g);
 			}
 		}
 	}
@@ -45,10 +37,10 @@ public class Board {
 		for(int x = 0; x < 8; x++) {
 			for(int y = 0; y < 8; y++) {
 				if(blackStatus == true) {
-					squares[x][y] = black;
+					squares[x][y] = new BlackSquare(x * Square.WIDTH, y * Square.HEIGHT);
 					blackStatus = false;
 				} else {
-					squares[x][y] = white;
+					squares[x][y] = new WhiteSquare(x * Square.WIDTH, y * Square.HEIGHT);
 					blackStatus = true;
 				}
 			}
