@@ -2,9 +2,11 @@ package com.core;
 
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
+import com.core.Handler;
 
 import com.GUI.Window;
 import com.assets.Assets;
+import com.board.Board;
 import com.input.KeyboardManager;
 import com.input.MouseManager;
 import com.state.GameState;
@@ -24,8 +26,14 @@ public class Game implements Runnable {
 	private KeyboardManager keyboardManager;
 	private MouseManager mouseManager;
 	
+<<<<<<< HEAD
 	private GameState gameState;
 	private MenuState menuState;
+=======
+	private Board b;
+	
+	private Handler handler;
+>>>>>>> 9f9bcadb840c166660fada6eba92c7f989d119a1
 	
 	@Override
 	public void run() {
@@ -74,12 +82,19 @@ public class Game implements Runnable {
 		window.getCanvas().addMouseListener(mouseManager);
 		window.getCanvas().addMouseMotionListener(mouseManager);
 		
+		handler = new Handler(this);
+		
 		Assets.init();
+<<<<<<< HEAD
 		
 		gameState = new GameState();
 		menuState = new MenuState();
 		
 		State.setCurrentStateTo(menuState);
+=======
+		b = new Board();
+		b.squareLoad();
+>>>>>>> 9f9bcadb840c166660fada6eba92c7f989d119a1
 	}
 	
 	private void render() {
@@ -91,7 +106,13 @@ public class Game implements Runnable {
 		g = bs.getDrawGraphics();
 		g.clearRect(0, 0, window.getWidth(), window.getHeight());
 		
+<<<<<<< HEAD
 		State.getCurrentState().render(g);
+=======
+		b.render(g);
+		
+		//g.drawImage(Assets.b, 50, 50, 128, 128, null);
+>>>>>>> 9f9bcadb840c166660fada6eba92c7f989d119a1
 		
 		g.dispose();
 		bs.show();
@@ -120,6 +141,30 @@ public class Game implements Runnable {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public Window getWindow() {
+		return window;
+	}
+
+	public void setWindow(Window window) {
+		this.window = window;
+	}
+
+	public KeyboardManager getKeyboardManager() {
+		return keyboardManager;
+	}
+
+	public void setKeyboardManager(KeyboardManager keyboardManager) {
+		this.keyboardManager = keyboardManager;
+	}
+
+	public MouseManager getMouseManager() {
+		return mouseManager;
+	}
+
+	public void setMouseManager(MouseManager mouseManager) {
+		this.mouseManager = mouseManager;
 	}
 	
 }
