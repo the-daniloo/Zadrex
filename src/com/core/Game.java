@@ -2,9 +2,11 @@ package com.core;
 
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
+import java.util.logging.Handler;
 
 import com.GUI.Window;
 import com.assets.Assets;
+import com.board.Board;
 import com.input.KeyboardManager;
 import com.input.MouseManager;
 
@@ -20,6 +22,8 @@ public class Game implements Runnable {
 	
 	private KeyboardManager keyboardManager;
 	private MouseManager mouseManager;
+	
+	private Board b;
 	
 	@Override
 	public void run() {
@@ -69,6 +73,8 @@ public class Game implements Runnable {
 		window.getCanvas().addMouseMotionListener(mouseManager);
 		
 		Assets.init();
+		b = new Board();
+		b.squareLoad();
 	}
 	
 	private void render() {
@@ -79,7 +85,7 @@ public class Game implements Runnable {
 		}
 		g = bs.getDrawGraphics();
 		g.clearRect(0, 0, window.getWidth(), window.getHeight());
-		
+		b.render(g);
 		g.drawImage(Assets.b, 50, 50, 128, 128, null);
 		
 		g.dispose();
