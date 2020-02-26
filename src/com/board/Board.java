@@ -1,6 +1,5 @@
 package com.board;
 
-import java.awt.Color;
 import java.awt.Graphics;
 
 public class Board {
