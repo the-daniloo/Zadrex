@@ -10,8 +10,8 @@ public class Board {
 	public static final int SQUARE_HEIGHT = 8;
 	
 	//tamanho do tabuleiro
-	private static final int HEIGHT = 512;
-	private static final int WIDTH = 512;
+	public static final int HEIGHT = 512;
+	public static final int WIDTH = 512;
 	
 	private final int black = 1;
 	private final int white = 0;
@@ -54,22 +54,4 @@ public class Board {
 			}
 		}
 	}
-	
-	public int getBoardHeight() {
-		return height;
-	}
-	
-	public void setBoardHeight(int newValue) {
-		this.height = newValue;
-	}
-	
-	public int getBoardWidth() {
-		return width;
-	}
-	
-	public void setBoardWidth(int newValue) {
-		this.width = newValue;
-	}
-	
-	
 }
