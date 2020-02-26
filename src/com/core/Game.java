@@ -84,7 +84,7 @@ public class Game implements Runnable {
 		g = bs.getDrawGraphics();
 		g.clearRect(0, 0, window.getWidth(), window.getHeight());
 		
-		g.drawImage(Assets.b, 50, 50, 128, 128, null);
+		//g.drawImage(Assets.b, 50, 50, 128, 128, null);
 		
 		g.dispose();
 		bs.show();
