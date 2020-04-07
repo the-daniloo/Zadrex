@@ -33,20 +33,23 @@ public class Board {
 	public void squareLoad() {
 		boolean blackStatus = true;
 		
+		int positionx = 142;
+		int positiony = 82;
+		
 		for(int y = 0; y < SQUARE_HEIGHT; y++) {
 			for(int x = 0; x < SQUARE_WIDTH; x++) {
 				if(x == SQUARE_WIDTH - 1) {
 					if(blackStatus == true) {
-						squares[x][y] = new BlackSquare(x * Square.WIDTH, y * Square.HEIGHT);
+						squares[x][y] = new BlackSquare((x * Square.WIDTH) + positionx, (y * Square.HEIGHT) + positiony);
 					} else {
-						squares[x][y] = new WhiteSquare(x * Square.WIDTH, y * Square.HEIGHT);
+						squares[x][y] = new WhiteSquare((x * Square.WIDTH) + positionx, (y * Square.HEIGHT) + positiony);
 					}
 				} else {
 					if(blackStatus == true) {
-						squares[x][y] = new BlackSquare(x * Square.WIDTH, y * Square.HEIGHT);
+						squares[x][y] = new BlackSquare((x * Square.WIDTH) + positionx, (y * Square.HEIGHT) + positiony);
 						blackStatus = false;
 					} else {
-						squares[x][y] = new WhiteSquare(x * Square.WIDTH, y * Square.HEIGHT);
+						squares[x][y] = new WhiteSquare((x * Square.WIDTH) + positionx, (y * Square.HEIGHT) + positiony);
 						blackStatus = true;
 					}
 				}
