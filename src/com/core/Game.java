@@ -26,14 +26,12 @@ public class Game implements Runnable {
 	private KeyboardManager keyboardManager;
 	private MouseManager mouseManager;
 	
-<<<<<<< HEAD
 	private GameState gameState;
 	private MenuState menuState;
-=======
+	
 	private Board b;
 	
 	private Handler handler;
->>>>>>> 9f9bcadb840c166660fada6eba92c7f989d119a1
 	
 	@Override
 	public void run() {
@@ -85,16 +83,14 @@ public class Game implements Runnable {
 		handler = new Handler(this);
 		
 		Assets.init();
-<<<<<<< HEAD
 		
 		gameState = new GameState();
 		menuState = new MenuState();
 		
 		State.setCurrentStateTo(menuState);
-=======
+
 		b = new Board();
 		b.squareLoad();
->>>>>>> 9f9bcadb840c166660fada6eba92c7f989d119a1
 	}
 	
 	private void render() {
@@ -106,13 +102,10 @@ public class Game implements Runnable {
 		g = bs.getDrawGraphics();
 		g.clearRect(0, 0, window.getWidth(), window.getHeight());
 		
-<<<<<<< HEAD
 		State.getCurrentState().render(g);
-=======
 		b.render(g);
 		
 		//g.drawImage(Assets.b, 50, 50, 128, 128, null);
->>>>>>> 9f9bcadb840c166660fada6eba92c7f989d119a1
 		
 		g.dispose();
 		bs.show();
